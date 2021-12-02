@@ -1,0 +1,21 @@
+# Buildozer files
+.buildozer/
+bin/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+ENV/
+VENV/
+virtualenv/
+.virtualenv/
+
+
+*.egg-info/
