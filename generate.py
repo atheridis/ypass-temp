@@ -60,7 +60,7 @@ class Pass():
             hashf,
             self.master.encode("utf-8"),
             self.salt.encode("utf-8"),
-            10_000_000 // (self.length + len(self.rules))
+            100_000 // (self.length + len(self.rules))
         ).hex()
 
         return int(entropy, 16)

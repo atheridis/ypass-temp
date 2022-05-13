@@ -19,6 +19,8 @@ def main(argsv):
     rules = ["lowercase", "uppercase", "digits", "symbols"]
     if argsv.exclude_paypal:
         exclude = "`~-_=+[]\\{|};:'\",<.>/?"
+    elif argsv.exclude_paypal:
+        exclude = "`\\|'\"<>"
     else:
         exclude = argsv.exclude
 
@@ -38,6 +40,8 @@ if __name__ == "__main__":
                         help="Select characters you wish to exclude")
     parser.add_argument("--exclude-paypal", dest="exclude_paypal", default=False,
                         action="store_true", help="Special exclude characters for paypal")
+    parser.add_argument("--exclude-hetzner", dest="exclude_paypal", default=False,
+                        action="store_true", help="Special exclude characters for hetzner")
     args = parser.parse_args()
 
     main(args)
