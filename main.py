@@ -21,6 +21,8 @@ def main(argsv):
         exclude = "`~-_=+[]\\{|};:'\",<.>/?"
     elif argsv.exclude_paypal:
         exclude = "`\\|'\"<>"
+    elif argsv.exclude_vodafonecu:
+        exclude = "!\"'()*,./:;<=>?[\\]^`{|}~"
     else:
         exclude = argsv.exclude
 
@@ -42,6 +44,8 @@ if __name__ == "__main__":
                         action="store_true", help="Special exclude characters for paypal")
     parser.add_argument("--exclude-hetzner", dest="exclude_paypal", default=False,
                         action="store_true", help="Special exclude characters for hetzner")
+    parser.add_argument("--exclude-vodafonecu", dest="exclude_vodafonecu", default=False,
+                        action="store_true", help="Special exclude characters for Vodafone CU")
     args = parser.parse_args()
 
     main(args)
