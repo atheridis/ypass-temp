@@ -4,11 +4,11 @@ Asks the user for input to generate a password
 
 from getpass import getpass
 from argparse import ArgumentParser
-from generate import Pass
+from .generate import Pass
 from pyperclip import copy
 
 
-def main(argsv):
+def genpass(argsv):
     """Main function"""
     name = input("name: ")
     site = input("site: ")
@@ -32,7 +32,7 @@ def main(argsv):
     copy(password)
 
 
-if __name__ == "__main__":
+def main():
     parser = ArgumentParser(description="")
     parser.add_argument("-l", "--length", type=int, default=16,
                         help="Set the length of your password (default: 16)")
@@ -48,4 +48,8 @@ if __name__ == "__main__":
                         action="store_true", help="Special exclude characters for Vodafone CU")
     args = parser.parse_args()
 
-    main(args)
+    genpass(args)
+
+
+if __name__ == "__main__":
+    main()
